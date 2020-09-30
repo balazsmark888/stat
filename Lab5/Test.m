@@ -1,0 +1,1 @@
+hist(Kozrefog(10000),20);

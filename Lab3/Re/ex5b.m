@@ -1,0 +1,36 @@
+function ex5b()
+
+    n = 10000;
+   
+    steps = 0;
+    for i = 1:n
+        probs = [1 2 3;18/50 12/50 20/50];
+        count = 50;
+        aCount = 18;
+        bCount = 12;
+        cCount = 20;
+        while(count > 35)
+            x = InversionByBinarySearch(probs,1);
+            count = count - 1;
+            switch(x)
+                case 1
+                    aCount = aCount - 1;
+                case 2
+                    bCount = bCount - 1;
+                case 3
+                    cCount = cCount - 1;
+            end
+
+            probs(2,1) = aCount / count;
+            probs(2,2) = bCount / count;
+            probs(2,3) = cCount / count;
+        end
+        if(bCount == 9)
+            steps = steps + 1;
+        end
+    end
+    p = steps / n
+    
+    
+    
+end
