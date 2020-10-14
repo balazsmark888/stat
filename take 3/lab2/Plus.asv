@@ -1,0 +1,3 @@
+subplot(1,2,2);
+plot(linspace(-4,8),ContinuousCDF(linspace(-4,8),'normal',[0,1]));
+title('ContinousCDF Normal');

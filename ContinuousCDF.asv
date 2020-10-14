@@ -18,10 +18,7 @@ switch(d_t)
         F = f(x);
         return;
     case 'lab2_plus1'
-        syms f(X);
-        f(X) = piecewise(X <= -2, 11/192 * (X^3/3 - X + 2/3), X <= 1, 1/6 * (X^2/2 + X + 1/2), X <= 2, 1/18 * (X^2/2 + 5*X - 11/2), X <= 3, 11/16 * (X^3/3 - 2 * X^2 + 4*X - 8/3), 0);
-        F = f(x);
-        return;
+        
 end
 n = length(x);
 F = zeros(1,n);

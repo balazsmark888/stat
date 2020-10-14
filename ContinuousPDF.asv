@@ -94,28 +94,27 @@ switch(distribution_type)
             end
         end
     case 'lab2_plus1'
+        f = piecewise(-2 < x && x <= -1, 11/16 .* (x .^ 2 - 1) ./ 12, -1 < x && x <= 1, (x + 1) ./ 6, 1 < x && x <= 2, (x + 5) ./ 18, 2 < x && x <= 3, 11/6 .* (x - 2) .^ 2, 0);
         f = zeros(1,length(x));
-        for i = 1 : length(x)
-           if(x(i) > -2)
-               if(x(i) <= -1)
+        for i = 1 : lentgh(x)
+           if(x > -2)
+               if(x <= -1)
                    f(i) = 11 / 16 * (x(i) ^ 2 - 1) / 12;
                else
-                   if(x(i) <= 1)
+                   if(x <= 1)
                        f(i) = (x(i) + 1) / 6;
                    else
-                       if(x(i) <= 2)
+                       if(x <= 2)
                            f(i) = (x(i) + 5) / 18;
                        else
-                           if(x(i) <= 3)
-                               f(i) = 11 / 16 * (x(i) - 2) ^ 2;
+                           if(x <= 3)
+                               f(i) = 11 / 16 * (x)
                            else
-                               f(i) = 0;
                            end
                        end
                    end
                end
            else
-               f(i) = 0;
            end
         end
 end

@@ -2,26 +2,36 @@ function ex3()
     
     n = 10000;
     counter = 0;
+    occ_counter = 0;
     seed = 3123;
     figure();
     hold on;
-    for i=1:n
+    while counter < n
         
-       [x,seed] = URealRNG(seed,2,0,2,1);
-       [y,seed] = URealRNG(seed,2,0,3,1);
+       x = UMersenneTwisterRNG();
+       x = x * 12 - 2;
+       y = UMersenneTwisterRNG();
+       y = y * 8;
        
-       if(x + y > 1 && 1 + y > x && 1 + x > y)
+       if(y <= 2 * x + 4 && y >= 0 && y <= 10 - x)
            counter = counter + 1;
-           plot(x,y,'.g');
-       else
-           plot(x,y,'.r');
+           
+           if(y <= sqrt(4 - (x - 2) ^ 2))
+               plot(x,y,'.g');
+               occ_counter = occ_counter + 1;
+           else
+               if(x > 2 && y >= 8 - x)
+                   plot(x,y,'.g');
+                   occ_counter = occ_counter + 1;
+               else
+                   plot(x,y,'.r');
+               end
+           end
        end
        
-       
-       drawnow();
         
     end
-    
-    p = counter / n
+    drawnow();
+    p = occ_counter / n
 
 end

@@ -82,4 +82,7 @@ switch(distribution_type)
     case 'exponential'
         p = parameters(1);
         f = 1/p .* ln(x);
+        
+    case 'lab2_plus2'
+        f = [1/36 1/18 13/144 1/9 1/36 39/144 1/12 1/3];
 end
