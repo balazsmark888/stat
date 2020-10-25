@@ -19,14 +19,14 @@ switch(d_t)
         X = sqrt(par^2 - 2 .* log(U));
     case 'lab3'
         for i = 1 : n
-            if(U(i) <= 0)
+            if(U(i) < 0 || U(i) > 1)
                 X(i) = 0;
             else
-                if(U(i) <= 1/2)
-                    X(i) = sqrt(U(i)/2);
+                if(U(i) <= 1/3)
+                    X(i) = -1/6 + sqrt(1 + 24*U(i)) / 6;
                 else
                     if(U(i) <= 1)
-                        X(i) = 1 - 1/2*sqrt(2 - 2*U(i));
+                        X(i) = (5 - sqrt(22 - 18 * U(i))) / 3;
                     else
                         if(x > 1)
                             X(i) = 1;

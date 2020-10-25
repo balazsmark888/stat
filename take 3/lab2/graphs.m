@@ -1,3 +1,5 @@
+figure;
+
 subplot(1,2,1);
 plot(1:5,DiscretePDF(1:5,'hypergeometric',[100,20,5]),'.r');
 title('DiscretePDF HyperGeometric');
@@ -6,7 +8,7 @@ subplot(1,2,2);
 stairs(1:5,DiscreteCDF(1:5,'hypergeometric',[100,20,5]));
 title('DiscreteCDF HyperGeometric');
 
-figure;
+figure; 
 
 subplot(1,2,1);
 plot(1:10,DiscretePDF(1:10,'geometric',1/3),'.r');
@@ -54,47 +56,47 @@ title('ContinuousPDF Normal');
 
 subplot(1,2,2);
 plot(linspace(-4,8),ContinuousCDF(linspace(-4,8),'normal',[0,1]));
-title('ContinousCDF Normal');
+title('ContinuousCDF Normal');
 
 figure;
 
 subplot(1,2,1);
 plot(linspace(0,10),ContinuousPDF(linspace(0,10),'exponential',1/2));
-title('ContinousPDF Exponential');
+title('ContinuousPDF Exponential');
 
 subplot(1,2,2);
 plot(linspace(0,10),ContinuousCDF(linspace(0,10),'exponential',1/2));
-title('ContinousCDF Exponential');
+title('ContinuousCDF Exponential');
 
 figure;
 
 subplot(1,2,1);
 plot(linspace(0,1),ContinuousPDF(linspace(0,1),'beta',[2,5]));
-title('ContinousPDF Beta');
+title('ContinuousPDF Beta');
 
 subplot(1,2,2);
 plot(linspace(0,1),ContinuousCDF(linspace(0,1),'beta',[2,5]));
-title('ContinousCDF Beta');
+title('ContinuousCDF Beta');
 
 figure;
 
 subplot(1,2,1);
 plot(linspace(0,4),ContinuousPDF(linspace(0,4),'gamma',[1/4,1]));
-title('ContinousPDF Gamma');
+title('ContinuousPDF Gamma');
 
 subplot(1,2,2);
 plot(linspace(0,4),ContinuousCDF(linspace(0,4),'gamma',[1/4,1]));   
-title('ContinousCDF Gamma');
+title('ContinuousCDF Gamma');
 
 figure;
 
 subplot(1,2,1);
 plot(linspace(-4,4),ContinuousPDF(linspace(-4,4),'student',1));
-title('ContinousPDF Student');
+title('ContinuousPDF Student');
 
 subplot(1,2,2);
 plot(linspace(-4,4),ContinuousCDF(linspace(-4,4),'student',1));
-title('ContinousCDF Student');
+title('ContinuousCDF Student');
 
 figure;
 

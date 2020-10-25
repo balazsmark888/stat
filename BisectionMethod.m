@@ -2,15 +2,15 @@ function X = BisectionMethod(d_t,par,a,b,epsilon,n)
 X = zeros(1,n);
 switch(d_t)
     case 'normal'
-        F = @(x) ContinousCDF(x,'normal',par);
+        F = @(x) ContinuousCDF(x,'normal',par);
     case 'exponential'
-        F = @(x) ContinousCDF(x,'exponential',par);
+        F = @(x) ContinouusCDF(x,'exponential',par);
     case 'beta'
-        F = @(x) ContinousCDF(x,'beta',par);
+        F = @(x) ContinuousCDF(x,'beta',par);
     case 'gamma'
-        F = @(x) ContinuosCDF(x,'gamma',par);
+        F = @(x) ContinuousCDF(x,'gamma',par);
     case 'lab3'
-        F = @(x) ContinuosCDF(x,'lab3',par);
+        F = @(x) ContinuousCDF(x,'lab3',par);
 end
 for i = 1:n
     aa = a;

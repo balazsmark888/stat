@@ -1,3 +1,5 @@
+figure;
+
 subplot(1,2,1);
 plot(1:5,hygepdf(1:5,100,20,5),'.r');
 title('DiscretePDF HyperGeometric');

@@ -9,8 +9,7 @@ switch(distribution_type)
         if(sigma <= 0)
             error('The standard deciaton must be a strictly positive number!');
         end
-        f = (1.0/sqrt(2.0*pi) / sigma) * exp(-(x - mu).^ 2 / 2.0 / sigma^2);
-        
+        f = (1.0/sqrt(2.0*pi) / sigma) * exp(-(x - mu).^ 2 / 2.0 / sigma^2);        
     case 'exponential'
         lambda = parameters(1);
         if(lambda <= 0)
@@ -69,14 +68,14 @@ switch(distribution_type)
     case 'lab3'
         f = zeros(1,length(x));
         for i = 1 : length(x)
-            if(x(i) <= 0)
+            if(x(i) < 0 || x(i) > 1)
                 f(i) = 0;
             else
-                if(x(i) <= 1/2)
-                    f(i) = 4 * x(i);
+                if(x(i) <= 1/3)
+                    f(i) = 1/2*(6*x(i) + 1);
                 else
-                    if(x <= 1)
-                        f(i) = 4 - 4 * x(i);
+                    if(x(i) <= 1)
+                        f(i) = 5/3 - x(i);
                     else
                         f(i) = 0;
                     end
