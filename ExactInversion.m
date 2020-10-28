@@ -35,4 +35,12 @@ switch(d_t)
                 end
             end
         end
+    case 'lab3_add'
+        for i = 1 : n
+            if(U(i) < 1 || U(i) > 2)
+                X(i) = 0;
+            else
+                X(i) = sqrt(sqrt(30*U(i) + 49/4) - 5/2);
+            end
+        end
 end

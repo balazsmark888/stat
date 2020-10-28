@@ -82,6 +82,15 @@ switch(distribution_type)
                 end
             end
         end
+     case 'lab3_add'
+        f = zeros(1,length(x));
+        for i = 1 : length(x)
+            if(x(i) < 1 || x(i) > 2)
+                f(i) = 0;
+            else
+                f(i) = (2*x(i)^3 + 5*x(i)) / 15;
+            end
+        end
     case 'snedecor-fischer'
         m = parameters(1);
         nn = parameters(2);
