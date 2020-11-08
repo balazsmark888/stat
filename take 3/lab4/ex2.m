@@ -1,8 +1,9 @@
 function ex2()
 
     n = 10000;
-    sigma = 6;
     mu = 2;
+    sigma = 6;
+    
     
     X1 = Laplace(n);
     X2 = Cauchy(n);
@@ -20,8 +21,9 @@ function ex2()
     hist(X3);
     title('N 2 6');
     
-    sigma = 2;
     mu = 3;
+    sigma = 2;
+    
     
     X4 = X2 .* sigma + mu;
     

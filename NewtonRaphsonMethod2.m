@@ -10,29 +10,27 @@ for i = 1 : n
     aux = initVal;
     u = UMersenneTwisterRNG() * (F(b) - F(a)) + F(a);
     
-    while(true)
-        x = aux;
-        current = 0;
+    x = aux;
+    current = 0;
+    y = x - (F(x) - u) / f(x);
+
+    while y < 0
+        x = x / 2;
         y = x - (F(x) - u) / f(x);
-        
-        while y < 0
-            x = x / 2;
-            y = x - (F(x) - u) / f(x);
-        end
-        
-        while(abs(F(x) - u) > eps && current < steps)
-            x = x - (F(x) - u) / f(x);
-            current = current + 1;
-        end
-        
-        if current < steps
-            break;
-        else
-            aux = aux / 2;
-        end
     end
+
+    x = y;
     
-    X(i) = x;
+    while(abs(F(x) - u) > eps && current < steps)
+        x = x - (F(x) - u) / f(x);
+        current = current + 1;
+    end
+
+    if current < steps
+        X(i) = x;
+    else
+        i = i - 1;
+    end
 end
 
 end

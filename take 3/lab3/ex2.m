@@ -4,7 +4,7 @@ function ex2()
     figure
     
     subplot(1,2,1);
-    hist(BisectionMethod('normal',[0,1],-2,2,0.01,n));
+    hist(BisectionMethod('normal',[-2,1],-4,0,0.01,n));
     title('Bisection 0 1');
 
     subplot(1,2,2);

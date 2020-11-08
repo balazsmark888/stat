@@ -22,6 +22,11 @@ switch(d_t)
         x_min = x(1) - 10^9;
     case 'student'
         x_min = x(1) - 10^9;
+    case 'lab3_add'
+        syms f(X);
+        f(X) = piecewise(X < 1, 0, 1 <= X <= 2, (X^4 + 5*X^2)/30 - 1/5, 0);
+        F = f(x);
+        return;
 end
 F = zeros(1,n);
 F(1) = quad(f,x_min,x(1));
