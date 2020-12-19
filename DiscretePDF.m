@@ -4,7 +4,7 @@ x = round(x);
 n = length(x);
 
 switch(distribution_type)
-    case'hypergeometric'
+    case 'hypergeometric'
         N = parameters(1);
         M = parameters(2);
         nn = parameters(3);
