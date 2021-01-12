@@ -6,6 +6,9 @@ for k = 1:n
    i = 1;
    while(u > cumprob(i))
        i = i + 1;
+       if(i == length(cumprob))
+           break;
+       end
    end
    X(k) = x(1, i);
 end

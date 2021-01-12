@@ -1,24 +1,16 @@
 function [bMin, bMax] = ConfIntUniform(alpha,n)
 
     a = 0;
-    b = 5
+    b = 16.4
     
     X = UMersenneTwisterRNG(n) .* (b - a) + a;
     
     x = norminv(1-alpha/2,0,1);
     
     s = mean(X);
-    
-    A = -x * sqrt(3);
-    B = -6 * s * sqrt(n);
-    C = 6 * sqrt(n);
-    
-    delta = B .^ 2 - 4 .* A .* C;
-    
-    lims = [(-B - sqrt(delta)) ./ (2 .* A),(-B + sqrt(delta)) ./ (2 .* A)];
-    
-    bMin = min(lims);
-    bMax = max(lims);
+        
+    bMin = s / (1/2 + x / (2 * sqrt(3 * n)));
+    bMax = s / (1/2 - x / (2 * sqrt(3 * n)));
     
     
     if(b < bMax && b > bMin)

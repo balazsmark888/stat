@@ -17,7 +17,7 @@ function [pMin, pMax] = ConfIntPascal(alpha,n)
     
     delta = B .^ 2 - 4 .* A .* C;
     
-    lims = [(-B + sqrt(delta)) / (2 * A),(-B - sqrt(delta)) / (2 * A)];
+    lims = [(-B + sqrt(delta)) / (2 .* A),(-B - sqrt(delta)) ./ (2 .* A)];
     
     pMin = min(lims);
     pMax = max(lims);

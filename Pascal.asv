@@ -1,0 +1,21 @@
+function X = Pascal (m, p, nn)
+
+  X = zeros(1,nn);
+
+  for k = 1:nn
+    U = UMersenneTwisterRNG();
+    i = 0;
+    pn = p^n;
+    hatv = 1;
+    S = nchoosek(n+i-1, i) * pn * hatv;
+
+    while (U > S)
+      i = i+1;
+      hatv = hatv * (1-p);
+      S = S + nchoosek(n+i-1, i) * pn * hatv;
+    end
+
+    X(k) = i;
+  end
+    
+end

@@ -63,7 +63,13 @@ switch(distribution_type)
         if(nn < 1)
             error('Incorrect parameters');
         end
-        f = gamma((nn+1)/2)/(sqrt(nn*pi)*gamma(nn/2)) .* (1 + (x.^2)./nn).^(-(nn+1)/2);
+        s = gamma((nn+1) / 2);
+        nev = sqrt(nn * pi) * gamma(nn/2);
+        f = zeros(1,length(x));
+         for i = 1 : length(x)
+             f(i) = (s / nev) * ((1 + ((x(i) ^ 2) / nn)) ^ (-((nn+1) / 2)));
+         end
+        %f = (gamma((nn+1)/2)/(sqrt(nn*pi)*gamma(nn/2))) .* (1 + ((x .^ 2) ./ nn)) .^ (-(nn+1) / 2);
         
     case 'lab3'
         f = zeros(1,length(x));

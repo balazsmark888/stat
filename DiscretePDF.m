@@ -63,7 +63,7 @@ switch(distribution_type)
             if(x(i)< 0)
                 error('Incorrect input data!');
             else
-                f(i) = nchoosek(m + x(i) - 1,x(i))*p^m*q^x(i);
+                f(i) = nchoosek(m + x(i) - 1, x(i)) * p ^ m * q ^ x(i);
             end
         end
     case 'poisson'

@@ -24,7 +24,7 @@
 % ------
 % sample     - a random sample of the given finite discrete random variable
 %
-function sample = InversionBySequentialSearch(X, uniform_rng, count)
+function sample = InversionBySequentialSearch2(X, uniform_rng, count)
 
 % input checking
 [row_count, column_count] = size(X);

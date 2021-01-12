@@ -43,4 +43,13 @@ switch(d_t)
                 X(i) = sqrt(sqrt(30*U(i) + 49/4) - 5/2);
             end
         end
+    case 'lab8_add'
+        t = par;
+        for i = 1 : n
+            if(U(i) < 0)
+                X(i) = 0;
+            else
+                X(i) = 6 * t * sqrt(-log(U(i)));
+            end
+        end
 end
